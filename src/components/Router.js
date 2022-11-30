@@ -4,7 +4,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Home from "./Home";
 import About from "./About";
-import Error from "./Error";
 
 export default class KasaRouter extends PureComponent {
     render() {
@@ -15,7 +14,7 @@ export default class KasaRouter extends PureComponent {
                 <Routes>
                     <Route path="/home" element={<Home housingsData={housingsData} />}/>
                     <Route path="/about" element={<About/>}/>
-                    <Route path="/" element={<Error code="404"/>}/>
+                    <Route path="/" element={<div>404</div>}/>
                 </Routes>
                 <Footer/>
             </Router>
