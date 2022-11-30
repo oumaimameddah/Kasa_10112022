@@ -10,7 +10,6 @@ export default class Home extends PureComponent {
     constructor() {
         super();
         this.state = {
-            loading: true,
             data: [],
         }
     }
@@ -20,13 +19,9 @@ export default class Home extends PureComponent {
         fetch(`${window.origin}/logements.json`)
             .then((res) => res.json())
             .then((vals) => this.setState({data: vals}));
-        setTimeout(() => {
-            this.setState({loading: false})
-        }, 3000);
     }
 
     render() {
-        const { loading } = this.state;
         const { data } = this.state;
         window.scrollTo(0, 0);
         window.document.title =
@@ -42,9 +37,7 @@ export default class Home extends PureComponent {
                     </article>
                     <div>
                         {
-                            data.length > 0 ?
-                                (data.map(({id, cover, title}) => (<Thumb key={id} id={id} cover={cover} title={title}/>)))
-                                : (<Error code="504"/>)
+                            data.map(({id, cover, title}) => (<Thumb key={id} id={id} cover={cover} title={title}/>))
                         }
                     </div>
                 </section>
