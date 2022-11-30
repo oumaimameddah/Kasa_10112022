@@ -1,6 +1,6 @@
 import React from 'react'
 import KasaRouter from './Router'
-import '../styles/App.css';
+import '../styles/app.style.css';
 
 function App() {
   return (
