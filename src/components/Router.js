@@ -15,6 +15,7 @@ export default class KasaRouter extends PureComponent {
                 <Routes>
                     <Route path="/home" element={<Home housingsData={housingsData} />}/>
                     <Route path="/about" element={<About/>}/>
+                    <Route path="/housing/:id" exact element={<div>VOUS AVEZ CLIQUER SUR UN ELEMENTS</div>}/>
                     <Route path='*' exact={true} element={<Error code="404"/>}/>
                 </Routes>
                 <Footer/>
