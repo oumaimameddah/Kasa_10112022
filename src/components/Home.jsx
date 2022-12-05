@@ -2,7 +2,6 @@ import React from 'react';
 import { PureComponent } from 'react';
 import homeImg from '../assets/home.png';
 import '../styles/home.style.css';
-import Error from "./Error";
 import Thumb from "./Thumb";
 
 export default class Home extends PureComponent {
