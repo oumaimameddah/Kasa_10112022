@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Home from "./Home";
 import About from "./About";
 import Error from "./Error";
+import Housing from "./Housting";
 
 export default class KasaRouter extends PureComponent {
     render() {
@@ -15,7 +16,7 @@ export default class KasaRouter extends PureComponent {
                 <Routes>
                     <Route path="/home" element={<Home housingsData={housingsData} />}/>
                     <Route path="/about" element={<About/>}/>
-                    <Route path="/housing/:id" exact element={<div>VOUS AVEZ CLIQUER SUR UN ELEMENTS</div>}/>
+                    <Route path="/housing/:id" exact element={<Housing />}/>
                     <Route path='*' exact={true} element={<Error code="404"/>}/>
                 </Routes>
                 <Footer/>
