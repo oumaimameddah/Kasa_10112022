@@ -2,6 +2,7 @@ import React from "react";
 import { PureComponent } from 'react';
 import {useParams} from "react-router-dom";
 import Tag from './Tag';
+import Gallery from "./Gallery";
 import Collapse from './Collapse';
 import Error from "./Error";
 import star from '../assets/star.png';
@@ -71,6 +72,7 @@ class HousingComponent extends PureComponent {
                         houseData.map((house) => (
                             <article key={house.id}>
                                 {setTitle(house.title)}
+                                <Gallery pictures={house.pictures} />
                                 <h2>{house.title}</h2>
                                 <h3>{house.location}</h3>
                                 <div className="divTags">
