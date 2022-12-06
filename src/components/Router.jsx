@@ -9,18 +9,18 @@ import Housing from "./Housting";
 
 export default class KasaRouter extends PureComponent {
     render() {
-        const { housingsData } = this.props
         return (
             <Router forceRefresh={true}>
                 <Header/>
                 <Routes>
-                    <Route path="/home" element={<Home housingsData={housingsData} />}/>
+                    <Route path="/home" element={<Home />}/>
                     <Route path="/about" element={<About/>}/>
-                    <Route path="/housing/:id" exact element={<Housing />}/>
-                    <Route path='*' exact={true} element={<Error code="404"/>}/>
+                    <Route path="/housing/:id" exact="true" element={<Housing />}/>
+                    <Route path='*' exact="true" element={<Error code="404"/>}/>
                 </Routes>
                 <Footer/>
             </Router>
         )
     }
 }
+
