@@ -43,7 +43,6 @@ class HousingComponent extends PureComponent {
         /** set the title of the page */
         const setTitle = (title) => {
             window.document.title = `Kasa - ${title}`;
-            return 0;
         };
         /** Get the rating of the housing */
         const getRating = (rating) => {
