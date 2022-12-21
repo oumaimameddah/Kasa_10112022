@@ -1,7 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import imgAbout from '../assets/about.png';
-import Collapse from './Collapse';
+import Collapse from '../components/Collapse';
 import '../styles/about.style.css';
 
 export default class About extends Component {

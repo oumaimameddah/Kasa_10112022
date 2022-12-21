@@ -2,22 +2,16 @@ import React from 'react';
 import { PureComponent } from 'react';
 import homeImg from '../assets/home.png';
 import '../styles/home.style.css';
-import Thumb from "./Thumb";
+import Thumb from "../components/Thumb";
+import dataHoustings from "../data/logements.json"
 
 export default class Home extends PureComponent {
     // Constructor
     constructor() {
-        super();
+        super(undefined);
         this.state = {
-            data: [],
+            data: dataHoustings,
         }
-    }
-
-    // fetch data
-    componentDidMount() {
-        fetch(`${window.origin}/logements.json`)
-            .then((res) => res.json())
-            .then((vals) => this.setState({data: vals}));
     }
 
     render() {

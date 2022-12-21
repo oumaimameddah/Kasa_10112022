@@ -1,12 +1,13 @@
 import React from "react";
 import { PureComponent } from 'react';
 import {useParams} from "react-router-dom";
-import Tag from './Tag';
-import Gallery from "./Gallery";
-import Collapse from './Collapse';
+import Tag from '../components/Tag';
+import Gallery from "../components/Gallery";
+import Collapse from '../components/Collapse';
 import Error from "./Error";
 import star from '../assets/star.png';
 import '../styles/housting.style.css';
+import dataHousting from "../data/logements.json"
 
 function Housing(Component) {
     return (props) => <Component {...props} params={useParams()} />;
@@ -16,17 +17,10 @@ class HousingComponent extends PureComponent {
 
     // Constructor
     constructor() {
-        super();
+        super(undefined);
         this.state = {
-            housingsData: []
+            housingsData: dataHousting
         }
-    }
-
-    // fetch data
-    componentDidMount() {
-        fetch(`${window.origin}/logements.json`)
-            .then((res) => res.json())
-            .then((vals) => this.setState({housingsData: vals}));
     }
 
     render() {

@@ -1,11 +1,11 @@
 import React, {PureComponent} from 'react';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Header from "./Header";
-import Footer from "./Footer";
-import Home from "./Home";
-import About from "./About";
-import Error from "./Error";
-import Housing from "./Housting";
+import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Error from "../pages/Error";
+import Housing from "../pages/Housting";
 
 export default class KasaRouter extends PureComponent {
     render() {
@@ -13,6 +13,7 @@ export default class KasaRouter extends PureComponent {
             <Router forceRefresh={true}>
                 <Header/>
                 <Routes>
+                    <Route path="/" element={<Navigate to="/home"/>}/>
                     <Route path="/home" element={<Home />}/>
                     <Route path="/about" element={<About/>}/>
                     <Route path="/housing/:id" exact="true" element={<Housing />}/>
