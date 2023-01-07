@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import chevron from '../assets/chevron.png';
 import PropTypes from 'prop-types';
-import Hammer from 'react-hammerjs';
 import "../styles/Gallery.style.css"
 
 export default class Gallery extends PureComponent {
@@ -65,14 +64,7 @@ export default class Gallery extends PureComponent {
                 )}
                 <div className="slidePictures">
                     <span>1/{pictures.length}</span>
-                    <Hammer
-                        onSwipe={(e) => {
-                            e.direction === 2 && controlSlideShow('Next');
-                            e.direction === 4 && controlSlideShow('Previous');
-                        }}
-                    >
-                        <img id="0" src={pictures[0]} alt="Logement Kasa" />
-                    </Hammer>
+                    <img id="0" src={pictures[0]} alt="Logement Kasa" />
                 </div>
             </div>
         );
