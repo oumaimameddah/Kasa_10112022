@@ -10,7 +10,7 @@ export default class Thumb extends PureComponent {
         const { title } = this.props;
         return (
             <article tabIndex="0" className="housing" key={id}>
-                <NavLink to={`/housing/${id}`} exact>
+                <NavLink to={`/housing/${id}`} exact="true">
                     <img src={cover} alt={title} />
                     <h2>{title}</h2>
                 </NavLink>
